@@ -4,7 +4,7 @@
  * @author Paul.Bronshteyn
  * @comment Built by a geek loaded on caffeine ...
  */
-;(function(win, doc) {
+;(function(win, doc, body, docElm) {
     var
         controls = [],
         eventTimer,
@@ -30,17 +30,25 @@
         },
 
         onScrollEnd = function() {
-            var ds = controls[0].dataset;
+            var ds = controls.dataset;
             ds.hasPt = ds.hasPu = winScroll() > 0;
             ds.hasPb = winScroll() <= 0;
             ds.hasPd = winScroll() + winHeight() !== scrollHeight() && winScroll() + winHeight() < scrollHeight();
         },
 
         onScroll = function() {
-            if (eventTimer) {
-                clearTimeout(eventTimer);
-            }
+            clearTimeout(eventTimer);
             eventTimer = setTimeout(onScrollEnd, 300);
+        },
+
+        onResizeEnd = function() {
+            controls.dataset.isActive = hasScroll() > 0;
+            onScrollEnd();
+        },
+
+        onResize = function() {
+            clearTimeout(eventTimer);
+            eventTimer = setTimeout(onResizeEnd, 300);
         },
 
         onClick = function(e) {
@@ -56,14 +64,15 @@
         },
 
         init = function() {
-            controls[0].dataset.isActive = hasScroll() > 0;
-            win.onscroll = win.onresize = onScroll;
-            controls[0].onclick = onClick;
+            controls.dataset.isActive = hasScroll() > 0;
+            win.onscroll = onScroll;
+            win.onresize = onResize;
+            controls.onclick = onClick;
             onScrollEnd();
         };
 
     win.onload = function() {
-        controls = doc.querySelectorAll('aside[data-sgsc="true"]');
-        controls.length && hasScroll() && init();
+        controls = doc.querySelectorAll('aside[data-sgsc="true"]')[0] || null;
+        controls && init();
     };
 }(window, document));
