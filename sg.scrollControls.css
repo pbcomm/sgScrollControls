@@ -9,11 +9,10 @@ aside[data-sgsc="true"] button {
     border: 0;
     font-size: 0;
     cursor: pointer;
-    text-align: center;
-    position: relative;
+    color: transparent;
 }
 
-aside[data-sgsc] [data-sgsc-btn],
+aside[data-sgsc] button,
 aside[data-sgsc="false"],
 aside[data-sgsc="true"] {
     display: none;
@@ -23,10 +22,10 @@ aside[data-sgsc="true"][data-is-active="true"] {
     display: block;
 }
 
-aside[data-sgsc="true"][data-sgsc-buttons*="pb"][data-has-pb="true"] [data-sgsc-btn="pb"],
-aside[data-sgsc="true"][data-sgsc-buttons*="pd"][data-has-pd="true"] [data-sgsc-btn="pd"],
-aside[data-sgsc="true"][data-sgsc-buttons*="pt"][data-has-pt="true"] [data-sgsc-btn="pt"],
-aside[data-sgsc="true"][data-sgsc-buttons*="pu"][data-has-pu="true"] [data-sgsc-btn="pu"] {
+aside[data-sgsc="true"][data-sgsc-buttons*="pb"][data-has-pb="true"] [name="pb"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pd"][data-has-pd="true"] [name="pd"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pt"][data-has-pt="true"] [name="pt"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pu"][data-has-pu="true"] [name="pu"] {
     display: block;
 }
 /* DO NOT CHANGE ANYTHING ABOVE */
@@ -44,45 +43,59 @@ aside[data-sgsc="true"] button {
     margin-top: 2px;
     border: 1px solid #aaa;
     border-radius: 3px;
-    text-align: center;
+    padding: 0 8px;
 }
 
     aside[data-sgsc="true"] button:first-child {
         margin: 0;
     }
 
-    aside[data-sgsc="true"] button[data-sgsc-btn="pt"]:before {
+    aside[data-sgsc="true"] button[name="pt"]:before {
         content: '';
         display: inline-block;
         border-top: 1px solid #666;
-        width: 16px;
+        width: 14px;
     }
 
-    aside[data-sgsc="true"] button[data-sgsc-btn="pt"]:after,
-    aside[data-sgsc="true"] button[data-sgsc-btn="pu"]:after {
+    aside[data-sgsc="true"] button[name="pt"]:after,
+    aside[data-sgsc="true"] button[name="pu"]:after {
         content: '';
         display: inline-block;
         width: 0;
         height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid #666;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #666;
     }
 
-    aside[data-sgsc="true"] button[data-sgsc-btn="pb"]:before,
-    aside[data-sgsc="true"] button[data-sgsc-btn="pd"]:before {
+    aside[data-sgsc="true"] button[name="pb"]:before,
+    aside[data-sgsc="true"] button[name="pd"]:before {
         content: '';
         display: inline-block;
         width: 0;
         height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-top: 8px solid #666;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #666;
     }
 
-    aside[data-sgsc="true"] button[data-sgsc-btn="pb"]:after {
+    aside[data-sgsc="true"] button[name="pb"]:after {
         content: '';
         display: inline-block;
         border-top: 1px solid #666;
-        width: 16px;
+        width: 14px;
     }
+
+aside[data-sgsc="true"] button:active,
+aside[data-sgsc="true"] button:hover {
+    background: #ddd;
+}
+
+    aside[data-sgsc="true"] button:active:before,
+    aside[data-sgsc="true"] button:hover:before,
+    aside[data-sgsc="true"] button:active:after,
+    aside[data-sgsc="true"] button:hover:after {
+        border-top-color: #333;
+        border-bottom-color: #333;
+    }
+

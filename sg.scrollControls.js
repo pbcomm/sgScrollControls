@@ -60,7 +60,7 @@
                     pu: winScroll() - winHeight()
                 };
 
-            win.scrollTo(0, btns[e.target.dataset.sgscBtn] || -1);
+            win.scrollTo(0, btns[e.target.name] || -1);
         },
 
         init = function() {
