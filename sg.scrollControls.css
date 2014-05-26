@@ -22,10 +22,10 @@ aside[data-sgsc="true"][data-is-active="true"] {
     display: block;
 }
 
-aside[data-sgsc="true"][data-sgsc-buttons*="pb"][data-has-pb="true"] [name="pb"],
-aside[data-sgsc="true"][data-sgsc-buttons*="pd"][data-has-pd="true"] [name="pd"],
-aside[data-sgsc="true"][data-sgsc-buttons*="pt"][data-has-pt="true"] [name="pt"],
-aside[data-sgsc="true"][data-sgsc-buttons*="pu"][data-has-pu="true"] [name="pu"] {
+aside[data-sgsc="true"][data-sgsc-buttons*="pb"][data-has-pb="true"] [value="pb"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pd"][data-has-pd="true"] [value="pd"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pt"][data-has-pt="true"] [value="pt"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pu"][data-has-pu="true"] [value="pu"] {
     display: block;
 }
 /* DO NOT CHANGE ANYTHING ABOVE */
@@ -50,15 +50,15 @@ aside[data-sgsc="true"] button {
         margin: 0;
     }
 
-    aside[data-sgsc="true"] button[name="pt"]:before {
+    aside[data-sgsc="true"] button[value="pt"]:before {
         content: '';
         display: inline-block;
         border-top: 1px solid #666;
         width: 14px;
     }
 
-    aside[data-sgsc="true"] button[name="pt"]:after,
-    aside[data-sgsc="true"] button[name="pu"]:after {
+    aside[data-sgsc="true"] button[value="pt"]:after,
+    aside[data-sgsc="true"] button[value="pu"]:after {
         content: '';
         display: inline-block;
         width: 0;
@@ -68,8 +68,8 @@ aside[data-sgsc="true"] button {
         border-bottom: 7px solid #666;
     }
 
-    aside[data-sgsc="true"] button[name="pb"]:before,
-    aside[data-sgsc="true"] button[name="pd"]:before {
+    aside[data-sgsc="true"] button[value="pb"]:before,
+    aside[data-sgsc="true"] button[value="pd"]:before {
         content: '';
         display: inline-block;
         width: 0;
@@ -79,7 +79,7 @@ aside[data-sgsc="true"] button {
         border-top: 7px solid #666;
     }
 
-    aside[data-sgsc="true"] button[name="pb"]:after {
+    aside[data-sgsc="true"] button[value="pb"]:after {
         content: '';
         display: inline-block;
         border-top: 1px solid #666;

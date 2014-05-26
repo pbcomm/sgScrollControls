@@ -60,7 +60,7 @@
                     pu: winScroll() - winHeight()
                 };
 
-            win.scrollTo(0, btns[e.target.name] || -1);
+            win.scrollTo(0, btns[e.target.value] || -1);
         },
 
         init = function() {
