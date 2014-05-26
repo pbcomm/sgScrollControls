@@ -63,11 +63,19 @@
             win.scrollTo(0, btns[e.target.value] || -1);
         },
 
+        addEvent = function(elm, event, func) {
+            if (elm.addEventListener) {
+                elm.addEventListener(event, func, false);
+            } else if (elm.attachEvent)  {
+                elm.attachEvent(elm, func);
+            }
+        },
+
         init = function() {
             controls.dataset.isActive = hasScroll() > 0;
-            win.onscroll = onScroll;
-            win.onresize = onResize;
-            controls.onclick = onClick;
+            addEvent(win, 'scroll', onScroll);
+            addEvent(win, 'resize', onResize);
+            addEvent(controls, 'click', onClick);
             onScrollEnd();
         };
 
