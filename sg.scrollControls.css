@@ -1,0 +1,88 @@
+/* DO NOT CHANGE ANYTHING BELOW */
+aside[data-sgsc="true"] {
+    display: block;
+    position: fixed;
+}
+
+aside[data-sgsc="true"] button {
+    display: block;
+    border: 0;
+    font-size: 0;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+}
+
+aside[data-sgsc] [data-sgsc-btn],
+aside[data-sgsc="false"],
+aside[data-sgsc="true"] {
+    display: none;
+}
+
+aside[data-sgsc="true"][data-is-active="true"] {
+    display: block;
+}
+
+aside[data-sgsc="true"][data-sgsc-buttons*="pb"][data-has-pb="true"] [data-sgsc-btn="pb"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pd"][data-has-pd="true"] [data-sgsc-btn="pd"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pt"][data-has-pt="true"] [data-sgsc-btn="pt"],
+aside[data-sgsc="true"][data-sgsc-buttons*="pu"][data-has-pu="true"] [data-sgsc-btn="pu"] {
+    display: block;
+}
+/* DO NOT CHANGE ANYTHING ABOVE */
+
+/* CHANGE ANYTHING BELOW */
+aside[data-sgsc="true"] {
+    bottom: 100px;
+    right: 0;
+}
+
+aside[data-sgsc="true"] button {
+    background: #ccc;
+    width: 30px;
+    height: 30px;
+    margin-top: 2px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    text-align: center;
+}
+
+    aside[data-sgsc="true"] button:first-child {
+        margin: 0;
+    }
+
+    aside[data-sgsc="true"] button[data-sgsc-btn="pt"]:before {
+        content: '';
+        display: inline-block;
+        border-top: 1px solid #666;
+        width: 16px;
+    }
+
+    aside[data-sgsc="true"] button[data-sgsc-btn="pt"]:after,
+    aside[data-sgsc="true"] button[data-sgsc-btn="pu"]:after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #666;
+    }
+
+    aside[data-sgsc="true"] button[data-sgsc-btn="pb"]:before,
+    aside[data-sgsc="true"] button[data-sgsc-btn="pd"]:before {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #666;
+    }
+
+    aside[data-sgsc="true"] button[data-sgsc-btn="pb"]:after {
+        content: '';
+        display: inline-block;
+        border-top: 1px solid #666;
+        width: 16px;
+    }
