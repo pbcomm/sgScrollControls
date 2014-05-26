@@ -4,7 +4,7 @@
  * @author Paul.Bronshteyn
  * @comment Built by a geek loaded on caffeine ...
  */
-;(function(win, doc, body, docElm) {
+;(function(win, doc) {
     var
         controls = [],
         eventTimer,
